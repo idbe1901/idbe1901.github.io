@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	  
+	<title>Event Bubbeling</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="page-container">
+	<div id="content-wrap">
+	<header id="main-header">
+		<div class="container">
+			<h1>JavaScript Events</h1>
+		</div>
+	</header>
+
+	<nav id="navbar">
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Hem</a></li>
+				<li><a href="omjava.html">Om JavaScript</a></li>
+				<li><a href="historia.html">Historia</a></li>
+				<li><a href="eventbubbeling.html">Event Bubbeling</a></li>
+				<li><a href="kontakt.html">Kontakt</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<header class = heading-pages>
+			<h2>Vad är Event Bubbeling?</h2>
+		</header>
+		<div class="container">
+			<p>
+					Event Bubbeling är en term som du kanske har stött på inom JavaScript och principen är ganska enkel. Det handlar om ordningen i vilken händelsehanterare åberopas när ett element kapslas in i ett andra element och båda elementen har en "listener" registrerad för samma händelse (till exempel ett klick).
+			</p>
+			<p>
+				Så när en händelse händer på ett element så körs först hanterare för det eventet, sedan vidare på dets "föräldrar" och sedan vidare upp till alla "förfäder". Anledningen att det kallas för just bubbeling är för att det börjar med det innersta elementet och sedan bubblar sig händelsen vidare uppåt som bubblor i vatten. Nästan alla element bubblar men inte alla som till exempel "focus".
+				</p>
+				<p>Så för att visa hur bubbeling fungerar har jag skapat en box här under som är uppdelad i tre boxar. Trycker man på knappen, som är det innersta elementet så kommer det att komma upp en liten ruta som talar om att man har klickat på knappen. Sedan bubbla eventet vidare till den Laxrosa boxen och rutan kommer upp igen men talar den här gången om att vi har klickat på den Laxrosa boxen. Till sist går det även vidare och så händer samma sak med den Ljusgröna boxen. Det samma gäller om man trycker på den Laxrosa boxen, då bubblar det vidare till den Lusgröna boxen.
+				</div>
+	
+	
+	
+		<div id="centerbubble">
+		 <div id="DIV1" onclick="alert('Klickat på Ljusgröna boxen.')">Ljusgröna boxen
+			<div id="DIV2" onclick="alert('Klickat på Laxrosa boxen.')">Laxrosa boxen
+				<div><input type="button" value="Klicka här" onclick="alert('Klickat på knappen.')"/> 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div style="margin-top:200px"></div>
+	</div>
+	<footer id="main-footer">
+		<p>Copyright &copy; 2019</p>
+	</footer>
+	</div>
+</body>
+</html>
